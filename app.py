@@ -209,7 +209,9 @@ def get_projects():
     conn.close()
 
     return jsonify([dict(p) for p in projects])
-
+@app.route("/test")
+def test():
+    return "Flask is working"
 
 # ---------- RUN ----------
 import os
