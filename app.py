@@ -225,9 +225,10 @@ def get_projects():
 def test():
     return "Flask is working"
 
+import os
 
-# ---------- RUN ----------
 if __name__ == "__main__":
-    init_db()
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port)
+    # Railway provides the port via environment variables
+    port = int(os.environ.get("PORT", 5000))
+    # '0.0.0.0' is required to make the server reachable externally
+    app.run(host='0.0.0.0', port=port)
